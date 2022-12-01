@@ -7,7 +7,7 @@ Revisão de todo conteúdo sobre Backend passado até o momento.
 <br>
 
 ## Documentação do Postman
-[<sub>Postman</sub>](https://github.com/Samuca010) 
+[<sub>Postman</sub>](https://documenter.getpostman.com/view/22363573/2s8Yt1spp7) 
 
 <br>
 

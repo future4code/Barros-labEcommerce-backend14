@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import connection from "../connection";
-import { characters } from "../data";
+import getAllCharacters from "./getAllCharacters";
 
 export default async function createCharacter(req:Request, res:Response
     ):Promise<void>{
@@ -9,7 +9,7 @@ export default async function createCharacter(req:Request, res:Response
             
             const {name,gender,description} = req.body 
 
-      //  console.log(req.headers["Content-Type"])
+       // console.log(req.headers["Content-Type"])
     
         // characters.push({
         //     id:Date.now(),
@@ -22,7 +22,7 @@ export default async function createCharacter(req:Request, res:Response
        await connection("character")
             .insert({name, gender, description})
 
-        res.status(201).send(characters)
+        res.status(201).send("Character create!")
 
         } catch (error:any) {
             res.status(500).send(error)

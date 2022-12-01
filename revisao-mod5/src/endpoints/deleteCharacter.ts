@@ -20,5 +20,5 @@ export default async function deleteCharacter(req: Request, res:Response
    }
 
    
-   res.status(200).end()
+   res.status(200).send("Character deleted!")
 }
