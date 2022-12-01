@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
 import connection from "../connection";
+import { characters } from "../data";
 
-export default async function createCharacter(req:Request,res:Response
+export default async function createCharacter(req:Request, res:Response
     ):Promise<void>{
 
         try {
             
             const {name,gender,description} = req.body 
 
-        console.log(req.headers["content-type"])
+      //  console.log(req.headers["Content-Type"])
     
         // characters.push({
         //     id:Date.now(),
@@ -16,13 +17,14 @@ export default async function createCharacter(req:Request,res:Response
         //     gender,
         //     description
         // })
-        await connection("character")
+       
+       // const result = await connection("character")
+       await connection("character")
             .insert({name, gender, description})
 
+        res.status(201).send(characters)
 
-        res.status(201).end()
-
-        } catch (error) {
-            res.status(500).end()
+        } catch (error:any) {
+            res.status(500).send(error)
         }
     }
